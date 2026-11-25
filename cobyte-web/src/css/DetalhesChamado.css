@@ -1,0 +1,1016 @@
+/* Estilos da tela de detalhes do chamado com hierarquia tipográfica refatorada */
+.detalhes-chamado-page .assumir-chamado { display: grid; gap: 8px; margin: 12px 0; }
+.detalhes-chamado-page .assumir-chamado button { width: 100%; min-height: 42px; white-space: normal; }
+.detalhes-chamado-page .assumir-chamado button:disabled { cursor: default; }
+.detalhes-chamado-page .assumir-chamado p { color: #64748b; font-size: 12px; }
+.detalhes-chamado-page {
+  min-width: 0;
+}
+
+.detalhes-chamado-page .detalhes-aviso {
+  margin: 0 0 16px;
+  padding: 12px;
+  border: 1px solid #f1d691;
+  border-radius: 8px;
+  color: #755318;
+  background: #fff8e8;
+  font-size: 0.875rem;
+}
+
+.detalhes-chamado-page .history-main-content,
+.detalhes-chamado-page .history-sidebar,
+.detalhes-chamado-page .history-message-card {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.detalhes-chamado-page .history-message-composer input {
+  min-width: 0;
+}
+
+.detalhes-chamado-page .avatar {
+  display: inline-grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #2864dc;
+  background: #e7efff;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* 4. Botões de Ação (Enviar mensagem, ALTERAR STATUS, Baixar, etc.) */
+.detalhes-chamado-page .primary-button,
+.detalhes-chamado-page .secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 0 16px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.18s ease,
+    transform 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.detalhes-chamado-page .primary-button {
+  color: #ffffff;
+  background: var(--primary-color, #397cf0);
+  box-shadow: 0 3px 8px rgba(24, 93, 241, 0.15);
+}
+
+.detalhes-chamado-page .primary-button:hover {
+  background: var(--primary-hover, #2469df);
+  transform: translateY(-1px);
+}
+
+.detalhes-chamado-page .secondary-button {
+  border-color: #dce3ed;
+  color: #334155;
+  background: #ffffff;
+}
+
+.detalhes-chamado-page .secondary-button:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.detalhes-chamado-page .small-button {
+  min-height: 30px;
+  padding: 0 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.detalhes-chamado-page .panel {
+  border: 1px solid #e7ebf2;
+  border-radius: 11px;
+  background: #ffffff;
+  box-shadow: 0 3px 12px rgba(35, 50, 74, 0.05);
+}
+
+.detalhes-chamado-page .status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.detalhes-chamado-page .status-tag i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.detalhes-chamado-page .status-tag.done {
+  color: #15976d;
+  background: #eaf8f2;
+}
+
+.detalhes-chamado-page .status-tag.open {
+  color: #3478dc;
+  background: #edf4ff;
+}
+
+.detalhes-chamado-page .status-tag.progress {
+  color: #ca861a;
+  background: #fff7e6;
+}
+
+.detalhes-chamado-page .empty-state {
+  padding: 35px;
+  color: #64748b;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.detalhes-chamado-page .history-page-shell {
+  width: 100%;
+  min-height: calc(100vh - 128px);
+  margin: 0;
+  padding: 0;
+}
+
+.detalhes-chamado-page .history-shell {
+  overflow: hidden;
+  border-color: #e6ebf2;
+  min-height: calc(100vh - 128px);
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.detalhes-chamado-page .history-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.8fr);
+  gap: 0;
+  min-height: calc(100vh - 168px);
+  flex: 1;
+}
+
+.detalhes-chamado-page .history-main-content {
+  padding: 24px;
+}
+
+.detalhes-chamado-page .history-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.detalhes-chamado-page .history-ticket-code {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: #2563eb;
+  background: #eff6ff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* 1. Título e Descrição Principal do Chamado */
+.detalhes-chamado-page .history-title {
+  margin: 0 0 8px;
+  color: #0f172a;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.detalhes-chamado-page .history-description {
+  margin: 0 0 16px;
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* 2. Rótulos e Valores dos Cards (Topo) */
+.detalhes-chamado-page .history-people-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.detalhes-chamado-page .history-person-box {
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.detalhes-chamado-page .history-person-label {
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.detalhes-chamado-page .history-person-box strong {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.detalhes-chamado-page .history-person-box small {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+/* 3. Seção de Conversa e Mensagens */
+.detalhes-chamado-page .history-conversation {
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #f8fafc;
+  margin-bottom: 20px;
+}
+
+.detalhes-chamado-page .history-conversation-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.detalhes-chamado-page .conversation-pill {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.detalhes-chamado-page .conversation-date {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.detalhes-chamado-page .history-message-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.detalhes-chamado-page .right-align {
+  justify-content: flex-end;
+}
+
+.detalhes-chamado-page .small-avatar {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  color: #ffffff;
+  background: #64748b;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.detalhes-chamado-page .support-avatar {
+  background: #2563eb;
+}
+
+.detalhes-chamado-page .history-message-card {
+  max-width: 78%;
+  padding: 12px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.detalhes-chamado-page .history-message-card strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.detalhes-chamado-page .history-message-card p {
+  margin: 0;
+  color: #334155;
+  font-size: 15px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.detalhes-chamado-page .customer-message {
+  background: #ffffff;
+}
+
+.detalhes-chamado-page .support-message {
+  background: #eff6ff;
+  border-color: #dbeafe;
+}
+
+.detalhes-chamado-page .history-message-composer {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.detalhes-chamado-page .history-message-composer input,
+.detalhes-chamado-page .history-message-composer textarea {
+  flex: 1;
+  min-height: 42px;
+  max-height: 120px;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 0.875rem;
+  font-family: inherit;
+  resize: vertical;
+  line-height: 1.4;
+  box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.detalhes-chamado-page .history-message-composer input::placeholder,
+.detalhes-chamado-page .history-message-composer textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* 4. Blocos Secundários ("Atendimento" e "Evidências") */
+.detalhes-chamado-page .history-evidences {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.detalhes-chamado-page .evidence-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.detalhes-chamado-page .evidence-header h4,
+.detalhes-chamado-page .history-rating h4 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.detalhes-chamado-page .evidence-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.detalhes-chamado-page .evidence-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #f8fafc;
+  color: #334155;
+  font-size: 0.8125rem;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.detalhes-chamado-page .evidence-item:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.detalhes-chamado-page .evidence-size {
+  color: #64748b;
+  font-size: 0.75rem;
+}
+
+.detalhes-chamado-page .history-rating {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.detalhes-chamado-page .stars {
+  color: #f59e0b;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  margin-top: 4px;
+}
+
+.detalhes-chamado-page .history-rating p {
+  margin: 6px 0 2px;
+  color: #334155;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.detalhes-chamado-page .history-rating small {
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+/* 2. Rótulos e Valores dos Cards (Sidebar Lateral) */
+.detalhes-chamado-page .history-sidebar {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  padding: 24px;
+  background: #f8fafc;
+  border-left: 1px solid #e2e8f0;
+}
+
+.detalhes-chamado-page .history-summary-card {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.detalhes-chamado-page .summary-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.detalhes-chamado-page .summary-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.detalhes-chamado-page .summary-progress {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 999px;
+  color: #15803d;
+  background: #dcfce7;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.detalhes-chamado-page .summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.detalhes-chamado-page .summary-item {
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+  border: 1px solid #f1f5f9;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.detalhes-chamado-page .summary-item.sla-atrasado {
+  border-color: #fecaca;
+  background: #fef2f2;
+}
+
+.detalhes-chamado-page .summary-item span {
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.detalhes-chamado-page .summary-item strong {
+  color: #0f172a;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.detalhes-chamado-page .texto-alerta-sla {
+  color: #b91c1c !important;
+}
+
+.detalhes-chamado-page .wide-button {
+  width: 100%;
+}
+
+.detalhes-chamado-page .history-info-card {
+  margin-bottom: 0;
+  padding: 12px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.detalhes-chamado-page .history-info-card h4 {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.detalhes-chamado-page .history-info-card p {
+  margin: 0 0 16px;
+  color: #475569;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.detalhes-chamado-page .history-info-card p:last-child {
+  margin-bottom: 0;
+}
+
+.detalhes-chamado-page .history-info-card .history-form-stack {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.detalhes-chamado-page .ticket-back-link {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 14px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #2563eb;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.detalhes-chamado-page .ticket-back-link:hover {
+  text-decoration: underline;
+}
+
+.detalhes-chamado-page .ticket-back-link:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.detalhes-chamado-page .history-info-card .secondary-button.wide-button {
+  margin-top: 4px;
+}
+
+.detalhes-chamado-page .status-fixed-row,
+.detalhes-chamado-page .status-fixed-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.detalhes-chamado-page .status-fixed-group.prioridade-group {
+  margin-top: 10px;
+}
+
+.detalhes-chamado-page .btn-confirmar-status,
+.detalhes-chamado-page .btn-salvar-prioridade {
+  align-self: flex-end;
+}
+
+.detalhes-chamado-page .aviso-atendimento {
+  margin: 6px 0 10px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.detalhes-chamado-page .aviso-atendimento.sucesso {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+}
+
+.detalhes-chamado-page .aviso-atendimento.erro {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+}
+
+.detalhes-chamado-page .select-status {
+  display: grid;
+  gap: 6px;
+  width: 100%;
+  min-width: 0;
+}
+
+.detalhes-chamado-page .select-status-label {
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.detalhes-chamado-page .select-status-control {
+  position: relative;
+  display: flex;
+  min-width: 0;
+}
+
+.detalhes-chamado-page .select-status-input {
+  appearance: none;
+  width: 100%;
+  min-width: 0;
+  min-height: 38px;
+  padding: 8px 34px 8px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.detalhes-chamado-page .select-status-input:hover:not(:disabled) {
+  border-color: #94a3b8;
+}
+
+.detalhes-chamado-page .select-status-input:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.detalhes-chamado-page .select-status-input:disabled {
+  color: #94a3b8;
+  background: #f1f5f9;
+  cursor: not-allowed;
+}
+
+.detalhes-chamado-page .select-status-arrow {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  color: #64748b;
+  pointer-events: none;
+}
+
+@media (max-width: 920px) {
+  .detalhes-chamado-page .history-layout {
+    grid-template-columns: 1fr;
+  }
+  .detalhes-chamado-page .history-sidebar {
+    border-left: 0;
+    border-top: 1px solid #e2e8f0;
+  }
+}
+
+@media (max-width: 640px) {
+  .detalhes-chamado-page .history-people-row,
+  .detalhes-chamado-page .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detalhes-chamado-page .history-header-row,
+  .detalhes-chamado-page .history-conversation-header,
+  .detalhes-chamado-page .evidence-header,
+  .detalhes-chamado-page .summary-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .detalhes-chamado-page .history-message-row {
+    align-items: flex-start;
+  }
+
+  .detalhes-chamado-page .history-message-card {
+    max-width: 100%;
+  }
+}
+
+/* Painel de Triagem por IA e Anexos Dinâmicos */
+.detalhes-chamado-page .history-ia-card {
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  background: #f0f7ff;
+}
+
+.detalhes-chamado-page .history-ia-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  color: #1d4ed8;
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.detalhes-chamado-page .ia-item-secao {
+  margin-bottom: 8px;
+}
+
+.detalhes-chamado-page .ia-titulo-sugerido {
+  margin: 4px 0 0;
+  color: #1e3a8a;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.detalhes-chamado-page .ia-justificativa {
+  margin: 4px 0 0;
+  color: #334155;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.detalhes-chamado-page .ia-resumo-destaques {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed #cbd5e1;
+}
+
+.detalhes-chamado-page .ia-resumo-topico {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: #ffffff;
+  padding: 8px 10px;
+  border: 1px solid #dbeafe;
+  border-radius: 6px;
+}
+
+.detalhes-chamado-page .ia-topico-badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #2563eb;
+}
+
+.detalhes-chamado-page .ia-resumo-topico p {
+  margin: 0;
+  font-size: 0.825rem;
+  color: #334155;
+  line-height: 1.4;
+}
+
+.detalhes-chamado-page .ia-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+}
+
+.detalhes-chamado-page .history-ia-card.fallback {
+  border-color: #e2e8f0;
+  background: #f8fafc;
+  color: #64748b;
+  font-style: italic;
+}
+
+.detalhes-chamado-page .evidence-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+}
+
+.detalhes-chamado-page .evidence-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.detalhes-chamado-page .evidence-empty {
+  margin: 8px 0;
+  color: #94a3b8;
+  font-size: 11px;
+  font-style: italic;
+}
+
+.detalhes-chamado-page .status-tag.priority {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.detalhes-chamado-page .status-tag.priority.priority-critica {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.detalhes-chamado-page .status-tag.priority.priority-alta {
+  background: #ffedd5;
+  color: #9a3412;
+}
+
+.detalhes-chamado-page .status-tag.priority.priority-media {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.detalhes-chamado-page .status-tag.priority.priority-baixa {
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.detalhes-chamado-page .header-tags {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.detalhes-chamado-page .mensagem-erro-conversa {
+  margin: 8px 0 4px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  font-size: 0.75rem;
+}
+
+.detalhes-chamado-page .history-message-composer-encerrado {
+  margin-top: 10px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  font-size: 0.8125rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.detalhes-chamado-page .history-message-composer-encerrado p {
+  margin: 0;
+}
+
+.detalhes-chamado-page .btn-reabrir {
+  background: #ffffff;
+  color: #2563eb;
+  border-color: #bfdbfe;
+  font-size: 0.8125rem;
+  padding: 4px 12px;
+}
+
+.detalhes-chamado-page .btn-reabrir:hover {
+  background: #eff6ff;
+  border-color: #93c5fd;
+}
+
+@media (max-width: 640px) {
+  .detalhes-chamado-page .history-message-composer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .detalhes-chamado-page .history-message-composer .primary-button {
+    width: 100%;
+  }
+}
+
+/* Alinhamento relativo ao usuário autenticado, incluindo a descrição inicial. */
+.detalhes-chamado-page .history-message-row.message-sent,
+.detalhes-chamado-page .history-message-row.message-received { min-width: 0; }
+.detalhes-chamado-page .message-sent { justify-content: flex-end; }
+.detalhes-chamado-page .message-sent > .avatar { order: 1; }
+.detalhes-chamado-page .message-sent .history-message-card {
+  align-self: flex-end;
+  margin-left: auto;
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  border-radius: 14px 14px 4px 14px;
+}
+.detalhes-chamado-page .message-received .history-message-card {
+  align-self: flex-start;
+  margin-right: auto;
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  border-radius: 14px 14px 14px 4px;
+}
+.detalhes-chamado-page .history-message-row .history-message-card {
+  min-width: 0;
+  max-width: 78%;
+}
+.detalhes-chamado-page .history-message-card p {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+.detalhes-chamado-page .message-header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-bottom: 6px; }
+.detalhes-chamado-page .message-header strong { margin: 0; overflow-wrap: anywhere; }
+.detalhes-chamado-page .message-header strong span { font-size: 11px; font-weight: 400; color: #64748b; }
+.detalhes-chamado-page .message-header time { font-size: 11px; color: #64748b; }
+
+.detalhes-chamado-page .ia-resumo-topico { min-width: 0; }
+.detalhes-chamado-page .ia-resumo-topico p { white-space: pre-wrap; overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .detalhes-chamado-page .ia-resumo-destaques { grid-template-columns: minmax(0, 1fr); }
+}
+
+.detalhes-chamado-page .cancellation-reason { display: grid; gap: 6px; width: 100%; color: #475569; font-size: 12px; }
+.detalhes-chamado-page .cancellation-reason textarea { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; resize: vertical; font: inherit; }
+.detalhes-chamado-page .cancellation-report { padding: 12px; margin-block: 12px; background: #fff7ed; border: 1px solid #fed7aa; border-radius: 8px; }
+.detalhes-chamado-page .cancellation-report p { white-space: pre-wrap; overflow-wrap: anywhere; }
+
+.history-message-row > .avatar{width:32px;height:32px;flex:0 0 32px;overflow:hidden}
+
+.avaliacao-atendimento label{display:flex;flex-direction:column;gap:7px;margin:12px 0;color:#475569;font-size:12px}
+.avaliacao-atendimento select,.avaliacao-atendimento textarea{width:100%;box-sizing:border-box;padding:9px;border:1px solid #cbd5e1;border-radius:6px;background:white;color:#172235;font:inherit}
+.avaliacao-atendimento textarea{resize:vertical}
+.avaliacao-atendimento .avaliacao-estrelas{font-size:24px;color:#854d0e}
+.avaliacao-atendimento .avaliacao-comentario{white-space:pre-wrap;overflow-wrap:anywhere}
+.avaliacao-atendimento small{display:block;color:#64748b;margin-bottom:12px}
+
+.avaliacao-selecao{border:0;padding:0;margin:12px 0;min-width:0}
+.avaliacao-selecao legend{font-size:12px;color:#475569}
+.avaliacao-opcoes{display:flex;gap:4px}
+.avaliacao-opcoes .avaliacao-estrela{position:relative;display:grid;place-items:center;width:38px;height:44px;margin:4px 0;cursor:pointer}
+.avaliacao-estrela input{position:absolute;opacity:0;width:100%;height:100%;margin:0;cursor:pointer}
+.avaliacao-estrela span{font-size:34px;line-height:1;color:#64748b;pointer-events:none}
+.avaliacao-estrela span.preenchida{color:#a16207}
+.avaliacao-estrela input:focus-visible+span{outline:2px solid #2563eb;outline-offset:3px;border-radius:3px}
+.avaliacao-selecao:disabled .avaliacao-estrela{opacity:.6;cursor:wait}
+
+.detalhes-chamado-page .history-info-card.avaliacao-atendimento .avaliacao-estrelas{
+  color:#b77900;
+  font-size:32px;
+  line-height:1.3;
+  letter-spacing:3px;
+  margin:10px 0;
+}
+
+.cancelamento-separado{margin-top:22px;padding-top:18px;border-top:1px solid #e2e8f0}
+.btn-abrir-cancelamento,.btn-confirmar-cancelamento{width:100%;padding:10px 14px;border:1px solid #fecaca;border-radius:7px;color:#991b1b;background:#fff;font-size:13px;font-weight:600;cursor:pointer}
+.btn-confirmar-cancelamento{background:#b91c1c;color:#fff;border-color:#b91c1c;margin-top:12px}
+.cancelamento-formulario{margin-top:14px}
+.btn-abrir-cancelamento:disabled,.btn-confirmar-cancelamento:disabled{opacity:.5;cursor:default}
+
+.atendimento-status-atual{display:flex;flex-direction:row;align-items:center;flex-wrap:wrap;gap:12px;margin:16px 0}
+.atendimento-status-atual>span:first-child{font-size:14px;font-weight:600;color:#475569}
+.atendimento-status-atual .chamado-badge{font-size:16px;padding:10px 15px;gap:9px;line-height:1.4;white-space:normal}
+.atendimento-status-atual .chamado-badge>i{width:8px;height:8px;flex-basis:8px}
+
+.detalhes-chamado-page .history-person-box{align-content:start;grid-auto-rows:min-content}
+.detalhes-chamado-page .history-person-box .history-person-label{min-height:20px}
+.detalhes-chamado-page .history-sidebar{background:#fff}
+.detalhes-chamado-page .history-sidebar .history-summary-card,
+.detalhes-chamado-page .history-sidebar .history-info-card{background:#f8fafc}
+
+.detalhes-chamado-page .assumir-chamado{margin:18px 0 22px}
+.detalhes-chamado-page .assumir-chamado>.primary-button{min-height:46px;padding:12px 18px}
+.detalhes-chamado-page .assumir-chamado>p{margin-top:14px;line-height:1.6}
+
+.ia-revisao-aviso{margin:14px 0;padding:14px 16px;border:1px solid #e5b548;border-radius:8px;background:#fff8e6;color:#714400}.ia-revisao-aviso p{margin:6px 0 0}

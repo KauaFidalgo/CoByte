@@ -1,0 +1,19 @@
+mailpit-windows-amd64/
+
+# Ignora todo o conteúdo da pasta de uploads
+cobyte-api/uploads/*
+
+# Preserva apenas o arquivo .gitkeep para que o Git rastreie a pasta
+!cobyte-api/uploads/.gitkeep
+
+AGENTS.md
+
+# Configuração local e chaves privadas
+.env
+.env.*
+!.env.example
+*.key
+*.pfx
+
+# Cache local do Vite
+.vite/
